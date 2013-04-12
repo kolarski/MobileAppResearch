@@ -14,8 +14,8 @@
         <script src="js/app.js" type="text/javascript"></script>
     </head> 
     <body> 
-        
-        <div data-role="page" id="home">
+          
+        <div data-role="page" id="home" data-id="page">
             
             <div data-role="content" style="padding:0">
                 <!--<h2 style="text-align:center; font-family: Verdana; ">Активни промоции</h2>-->
@@ -24,8 +24,15 @@
             <div class="nav">
                 <ul data-role="listview"></ul>
             </div>
-             <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Да Mall ООД</span>
+           <div data-role="footer" data-id="page" data-position="fixed">
+            	<div data-role="navbar">
+            		<ul>
+            			<li><a href="#" class="ui-btn-active ui-state-persist">Hot</a></li>
+            			<li><a href="#">Search</a></li>
+            			<li><a href="#">Favs</a></li>
+            			<li><a href="#">Settings</a></li>
+            		</ul>
+            	</div>
             </div>
         </div>
         
