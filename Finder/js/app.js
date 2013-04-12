@@ -5,23 +5,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is ready
 function onDeviceReady() {
     //getLocation();
-    app.loadModel('offers');
+    app.loadModel('offers', function(result){
+        var offers_list = $("#home ul");
+        offers_list.empty();
+        for (var i in result.active) {
+           offers_list.append('<li><a href="#page1" data-transition="slide">'+result.active[i].name+' <br /><p style="margin-top:10px;font-size:9px; font-weight: normal;">Отстъпка: ' + result.active[i].discount + result.active[i].discount_type +'<br />Остават: <span style="color: red">5 дена</span></p></a></li>');
+       }
+         offers_list.listview( "refresh" ); 
+    });
     //fetchOffers();
     navigator.splashscreen.hide();
 }
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
-}
-function fetchOffers()
-{
-       console.log('fetching offers');
-       $.ajax({
-       url:'controller/action',
-       success: function(result) {
-        alert(result);
-       } // <-- add this
-    });
 }
 
 //=======================Geolocation Operations=======================//
