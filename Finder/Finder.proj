@@ -33,6 +33,7 @@
       <Platform>Android</Platform>
     </Folder>
     <Folder Include="js" />
+    <Folder Include="imgs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -58,6 +59,7 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\logo.jpg" />
     <Content Include="index.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
