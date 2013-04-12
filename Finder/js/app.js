@@ -4,37 +4,24 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 // PhoneGap is ready
 function onDeviceReady() {
-    getLocation();
+    //getLocation();
+    app.loadModel('offers');
+    //fetchOffers();
     navigator.splashscreen.hide();
 }
 
 function getLocation() {
-    myNewFunction();
-}
-  
-function myNewFunction(){
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
 }
-  
-//=======================Say Hello (Page 1) Operations=======================//
-function sayHello() {
-    var sayHelloInputElem = document.getElementById('helloWorldInput');
-    var sayHelloTextElem = document.getElementById('helloWorldText');
-    var inputText = document.getElementById('txtName');
-    
-    sayHelloTextElem.innerHTML = 'Hello, ' + inputText.value + '!';
-    sayHelloTextElem.style.display = 'block';
-    sayHelloInputElem.style.display = 'none';
-}
-
-function sayHelloReset() {
-    var sayHelloInputElem = document.getElementById('helloWorldInput');
-    var sayHelloTextElem = document.getElementById('helloWorldText');
-    var inputText = document.getElementById('txtName');
-    
-    inputText.value = '';
-    sayHelloTextElem.style.display = 'none';
-    sayHelloInputElem.style.display = 'block';
+function fetchOffers()
+{
+       console.log('fetching offers');
+       $.ajax({
+       url:'controller/action',
+       success: function(result) {
+        alert(result);
+       } // <-- add this
+    });
 }
 
 //=======================Geolocation Operations=======================//
